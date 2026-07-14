@@ -1,0 +1,10 @@
+services:
+  projector:
+    build: .
+    ports: ["8080:8080"]
+    env_file: .env
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: unless-stopped

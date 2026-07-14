@@ -1,0 +1,9 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: clip-projector-default-deny-egress
+spec:
+  podSelector:
+    matchLabels: {app: clip-projector}
+  policyTypes: [Egress]
+  egress: []
